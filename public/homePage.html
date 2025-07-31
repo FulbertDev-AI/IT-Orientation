@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>IT Orientation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            corePlugins: {
+                preflight: false,
+            },
+            important: true,
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3498DB',
+                        secondary: '#F9EBEA',
+                        accent: '#2C3E50',
+                        dark: '#1A252F',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1s ease-in-out',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'pulse-slow': 'pulse 3s infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Base styles for mobile-first approach */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            min-width: 320px;
+            overflow-x: hidden;
+        }
+        
+        /* Custom CSS for animations and effects */
+        .hero-bg {
+            background-image: url('../assets/headerImage.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #3498DB;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .progress-bar {
+            transition: width 1s ease-in-out;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 py-3">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <a href="#" class="text-xl sm:text-2xl font-bold text-primary">IT<span class="text-accent">Orientation</span></a>
+                </div>
+                <div class="hidden md:flex items-center space-x-6 lg:space-x-8">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-primary text-sm lg:text-base">Accueil</a>
+                    <a href="#filieres" class="nav-link text-gray-700 hover:text-primary text-sm lg:text-base">Filières</a>
+                    <a href="#roadmap" class="nav-link text-gray-700 hover:text-primary text-sm lg:text-base">Roadmap</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-primary text-sm lg:text-base">Contact</a>
+                </div>
+                <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+                    <i class="fas fa-bars text-gray-700 text-xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-4 space-y-1">
+                <a href="#home" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Accueil</a>
+                <a href="#filieres" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Filières</a>
+                <a href="#roadmap" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Roadmap</a>
+                <a href="#contact" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg text-white py-12 sm:py-20">
+        <div class="container mx-auto px-4 sm:px-6 text-center hero-content">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 animate-fade-in">Orientation en Informatique</h1>
+                <p class="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 animate-fade-in opacity-0" style="animation-delay: 0.3s;">
+                    Votre guide complet pour devenir un professionnel en Génie Logiciel ou Cybersécurité
+                </p>
+                <div class="animate-fade-in opacity-0" style="animation-delay: 0.6s;">
+                    <a href="#filieres" class="bg-white text-primary font-bold px-6 sm:px-8 py-2 sm:py-3 rounded-full hover:bg-secondary transition duration-300 inline-block text-sm sm:text-base">
+                        Explorer les filières
+                    </a>
+                </div>
+            </div>
+            <div class="mt-10 sm:mt-16 animate-fade-in opacity-0" style="animation-delay: 0.9s;">
+                <img src="https://cdn-icons-png.flaticon.com/512/3279/3279032.png" alt="IT Illustration" class="h-32 sm:h-40 md:h-48 mx-auto floating">
+            </div>
+        </div>
+    </section>
+
+    <!-- Filières Section -->
+    <section id="filieres" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-accent mb-16 animate-slide-up">Les Filières IT</h2>
+            
+            <div class="grid grid-cols-1 gap-6 sm:gap-8 md:gap-10 md:grid-cols-2">
+                <!-- Génie Logiciel Card -->
+                <div class="bg-secondary rounded-xl p-8 shadow-lg card-hover animate-slide-up opacity-0" style="animation-delay: 0.2s;">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-primary rounded-full p-3 mr-4">
+                            <i class="fas fa-laptop-code text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-accent">Génie Logiciel</h3>
+                    </div>
+                    <p class="text-gray-700 mb-6">
+                        Le génie logiciel est la discipline qui consiste à concevoir, développer, tester et maintenir des applications logicielles de qualité.
+                    </p>
+                    <div class="mb-6">
+                        <h4 class="font-semibold text-primary mb-2">Compétences clés :</h4>
+                        <ul class="list-disc pl-5 text-gray-700">
+                            <li class="mb-1">Algorithmique et structures de données</li>
+                            <li class="mb-1">Programmation orientée objet</li>
+                            <li class="mb-1">Bases de données</li>
+                            <li class="mb-1">Architecture logicielle</li>
+                        </ul>
+                    </div>
+                    <a href="#roadmap" class="text-primary font-semibold hover:underline inline-flex items-center">
+                        Voir la roadmap <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Cybersécurité Card -->
+                <div class="bg-secondary rounded-xl p-8 shadow-lg card-hover animate-slide-up opacity-0" style="animation-delay: 0.4s;">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-primary rounded-full p-3 mr-4">
+                            <i class="fas fa-shield-alt text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-accent">Cybersécurité</h3>
+                    </div>
+                    <p class="text-gray-700 mb-6">
+                        La cybersécurité consiste à protéger les systèmes informatiques contre les accès non autorisés ou les attaques visant à compromettre les données.
+                    </p>
+                    <div class="mb-6">
+                        <h4 class="font-semibold text-primary mb-2">Compétences clés :</h4>
+                        <ul class="list-disc pl-5 text-gray-700">
+                            <li class="mb-1">Sécurité des réseaux</li>
+                            <li class="mb-1">Cryptographie</li>
+                            <li class="mb-1">Tests d'intrusion</li>
+                            <li class="mb-1">Forensique numérique</li>
+                        </ul>
+                    </div>
+                    <a href="#roadmap-cyber" class="text-primary font-semibold hover:underline inline-flex items-center">
+                        Voir la roadmap <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="mt-16 text-center animate-slide-up opacity-0" style="animation-delay: 0.6s;">
+                <h3 class="text-2xl font-bold text-accent mb-6" id="debouches">Débouchés professionnels détaillés</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Génie Logiciel -->
+                    <div class="bg-white p-6 rounded-lg shadow-md card-hover">
+                        <i class="fas fa-laptop-code text-primary text-4xl mb-4"></i>
+                        <h4 class="font-bold text-lg mb-2">Génie Logiciel</h4>
+                        <ul class="text-left text-gray-600 space-y-3">
+                            <li><span class="font-bold">Développeur Full-Stack</span> - Crée des applications web complètes (frontend + backend)</li>
+                            <li><span class="font-bold">Architecte logiciel</span> - Conçoit l'architecture technique des systèmes complexes</li>
+                            <li><span class="font-bold">Ingénieur DevOps</span> - Automatise les déploiements et gère l'infrastructure</li>
+                            <li><span class="font-bold">Chef de projet</span> - Pilote les équipes et les délais de développement</li>
+                            <li><span class="font-bold">Développeur mobile</span> - Crée des applications pour iOS et Android</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Cybersécurité -->
+                    <div class="bg-white p-6 rounded-lg shadow-md card-hover">
+                        <i class="fas fa-shield-alt text-primary text-4xl mb-4"></i>
+                        <h4 class="font-bold text-lg mb-2">Cybersécurité</h4>
+                        <ul class="text-left text-gray-600 space-y-3">
+                            <li><span class="font-bold">Analyste SOC</span> - Surveille et répond aux incidents de sécurité</li>
+                            <li><span class="font-bold">Pentester</span> - Effectue des tests d'intrusion pour évaluer la sécurité</li>
+                            <li><span class="font-bold">Consultant en sécurité</span> - Audite et conseille les entreprises</li>
+                            <li><span class="font-bold">Responsable sécurité</span> - Définit la politique de sécurité d'une organisation</li>
+                            <li><span class="font-bold">Expert en forensic</span> - Analyse les cyberattaques et les preuves numériques</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Autres métiers IT -->
+                    <div class="bg-white p-6 rounded-lg shadow-md card-hover">
+                        <i class="fas fa-server text-primary text-4xl mb-4"></i>
+                        <h4 class="font-bold text-lg mb-2">Autres métiers IT</h4>
+                        <ul class="text-left text-gray-600 space-y-3">
+                            <li><span class="font-bold">Data Scientist</span> - Analyse et modélise des données complexes</li>
+                            <li><span class="font-bold">Administrateur système</span> - Gère les serveurs et l'infrastructure réseau</li>
+                            <li><span class="font-bold">Expert Cloud</span> - Déploie des solutions sur AWS, Azure ou GCP</li>
+                            <li><span class="font-bold">Ingénieur IA</span> - Développe des modèles d'intelligence artificielle</li>
+                            <li><span class="font-bold">Scrum Master</span> - Facilite les méthodologies agiles</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mt-8 text-gray-600 max-w-3xl mx-auto">
+                    <p>Ces métiers offrent des salaires attractifs et d'excellentes perspectives d'évolution. La plupart demandent une formation technique solide et une veille constante sur les nouvelles technologies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Génie Logiciel Roadmap -->
+    <section id="roadmap" class="py-20 bg-secondary">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-accent mb-6 animate-slide-up">Roadmap Génie Logiciel</h2>
+            <p class="text-center text-gray-700 max-w-2xl mx-auto mb-12 animate-slide-up opacity-0" style="animation-delay: 0.2s;">
+                Devenez un développeur full-stack compétent en suivant cette progression étape par étape
+            </p>
+            
+            <div class="max-w-4xl mx-auto">
+                <!-- Année 1 -->
+                <div class="mb-12 animate-slide-up opacity-0" style="animation-delay: 0.4s;">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-primary text-white font-bold rounded-full w-10 h-10 flex items-center justify-center mr-4">1</div>
+                        <h3 class="text-2xl font-bold text-accent">Fondamentaux de la programmation</h3>
+                    </div>
+                    <div class="ml-14 pl-4 border-l-4 border-primary">
+                        <div class="mb-6">
+                            <h4 class="font-semibold text-primary mb-2">Concepts à maîtriser :</h4>
+                            <ul class="list-disc pl-5 text-gray-700">
+                                <li class="mb-1">Algorithmique et structures de données</li>
+                                <li class="mb-1">Programmation procédurale</li>
+                                <li class="mb-1">Bases de la programmation orientée objet</li>
+                                <li class="mb-1">Gestion de version avec Git</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-primary mb-2">Langages recommandés :</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-white px-3 py-1 rounded-full text-sm font-medium shadow">Python</span>
+                                <span class="bg-white px-3 py-1 rounded-full text-sm font-medium shadow">Java</span>
+                                <span class="bg-white px-3 py-1 rounded-full text-sm font-medium shadow">C</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Année 2 -->
+                <div class="mb-12 animate-slide-up opacity-0" style="animation-delay: 0.6s;">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-primary text-white font-bold rounded-full w-10 h-10 flex items-center justify-center mr-4">2</div>
+                        <h3 class="text-2xl font-bold text-accent">Développement Web & Bases de données</h3>
+                    </div>
+                    <div class="ml-14 pl-4 border-l-4 border-primary">
+                        <div class="mb-6">
+                            <h4 class="font-semibold text-primary mb-2">Concepts à maîtriser :</h4>
+                            <ul class="list-disc pl-5 text-gray-700">
+                                <li class="mb-1">HTML5, CSS3 et JavaScript moderne</li>
+                                <li class="mb-1">Bases de données relationnelles (SQL)</li>
+                                <li class="mb-1">Conception d'API REST</li>
+                                <li class="mb-1">Authentification et autorisation</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-primary mb-2">Technologies recommandées :</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-white px-3 py-1 rounded-full text-sm font-medium shadow">React</span>
+                                <span class="bg-white px-3 py-1 rounded-full text-sm font-medium shadow">Node.js</span>
+                                <span class="bg-white px-3 py-1 rounded-full text-sm font-medium shadow">PostgreSQL</span>
+                                <span class="bg-white px-3 py-1 rounded-full text-sm font-medium shadow">Express</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Année 3 -->
+                <div class="mb-12 animate-slide-up opacity-0" style="animation-delay: 0.8s;">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-primary text-white font-bold rounded-full w-10 h-10 flex items-center justify-center mr-4">3</div>
+                        <h3 class="text-2xl font-bold text-accent">Architecture logicielle avancée</h3>
+                    </div>
+                    <div class="ml-14 pl-4 border-l-4 border-primary">
+                        <div class="mb-6">
+                            <h4 class="font-semibold text-primary mb-2">Concepts à maîtriser :</h4>
+                            <ul class="list-disc pl-5 text-gray-700">
+                                <li class="mb-1">Design patterns et principes SOLID</li>
+                                <li class="mb-1">Microservices et architecture distribuée</li>
+                                <li class="mb-1">Tests unitaires et d'intégration</li>
+                                <li class="mb-1">CI/CD et DevOps basics</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-primary mb-2">Technologies recommandées :</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-white px-3 py-1 rounded-full text-sm font-medium shadow">Docker</span>
+                                <span class="bg-white px-3 py-1 rounded-full text-sm font-medium shadow">Kubernetes</span>
+                                <span class="bg-white px-3 py-1 rounded-full text-sm font-medium shadow">AWS/GCP</span>
+                                <span class="bg-white px-3 py-1 rounded-full text-sm font-medium shadow">Jest</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Visual Roadmap -->
+                <div class="bg-white p-8 rounded-xl shadow-xl mb-12 animate-slide-up opacity-0" style="animation-delay: 1s;">
+                    <h3 class="text-2xl font-bold text-primary mb-6 text-center">Cheminement Full-Stack</h3>
+                    <div class="relative">
+                        <!-- Timeline -->
+                        <div class="absolute left-1/2 h-full w-1 bg-primary transform -translate-x-1/2"></div>
+                        
+                        <!-- Steps -->
+                        <div class="relative space-y-16">
+                            <!-- Step 1 -->
+                            <div class="flex items-center">
+                                <div class="w-1/2 pr-8 text-right">
+                                    <h4 class="font-bold text-lg text-accent mb-2">Fondamentaux</h4>
+                                    <p class="text-gray-600">Algorithmes, Structures de données, Programmation de base</p>
+                                </div>
+                                <div class="w-8 h-8 rounded-full bg-primary border-4 border-white shadow-md absolute left-1/2 transform -translate-x-1/2"></div>
+                                <div class="w-1/2 pl-8">
+                                    <div class="bg-secondary p-4 rounded-lg">
+                                        <p class="text-gray-700"><span class="font-semibold">Technos:</span> Python, Java, C</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Step 2 -->
+                            <div class="flex items-center">
+                                <div class="w-1/2 pr-8 text-right">
+                                    <div class="bg-secondary p-4 rounded-lg">
+                                        <p class="text-gray-700"><span class="font-semibold">Technos:</span> HTML/CSS, JavaScript, SQL</p>
+                                    </div>
+                                </div>
+                                <div class="w-8 h-8 rounded-full bg-primary border-4 border-white shadow-md absolute left-1/2 transform -translate-x-1/2"></div>
+                                <div class="w-1/2 pl-8">
+                                    <h4 class="font-bold text-lg text-accent mb-2">Développement Web</h4>
+                                    <p class="text-gray-600">Frontend basics, Bases de données, API REST</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Step 3 -->
+                            <div class="flex items-center">
+                                <div class="w-1/2 pr-8 text-right">
+                                    <h4 class="font-bold text-lg text-accent mb-2">Frameworks Frontend</h4>
+                                    <p class="text-gray-600">Applications interactives, State management</p>
+                                </div>
+                                <div class="w-8 h-8 rounded-full bg-primary border-4 border-white shadow-md absolute left-1/2 transform -translate-x-1/2"></div>
+                                <div class="w-1/2 pl-8">
+                                    <div class="bg-secondary p-4 rounded-lg">
+                                        <p class="text-gray-700"><span class="font-semibold">Technos:</span> React, Vue, Angular</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Step 4 -->
+                            <div class="flex items-center">
+                                <div class="w-1/2 pr-8 text-right">
+                                    <div class="bg-secondary p-4 rounded-lg">
+                                        <p class="text-gray-700"><span class="font-semibold">Technos:</span> Node.js, Express, Django</p>
+                                    </div>
+                                </div>
+                                <div class="w-8 h-8 rounded-full bg-primary border-4 border-white shadow-md absolute left-1/2 transform -translate-x-1/2"></div>
+                                <div class="w-1/2 pl-8">
+                                    <h4 class="font-bold text-lg text-accent mb-2">Backend Avancé</h4>
+                                    <p class="text-gray-600">Authentification, Microservices, Optimisation</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Step 5 -->
+                            <div class="flex items-center">
+                                <div class="w-1/2 pr-8 text-right">
+                                    <h4 class="font-bold text-lg text-accent mb-2">DevOps & Cloud</h4>
+                                    <p class="text-gray-600">Déploiement, CI/CD, Infrastructure as Code</p>
+                                </div>
+                                <div class="w-8 h-8 rounded-full bg-primary border-4 border-white shadow-md absolute left-1/2 transform -translate-x-1/2"></div>
+                                <div class="w-1/2 pl-8">
+                                    <div class="bg-secondary p-4 rounded-lg">
+                                        <p class="text-gray-700"><span class="font-semibold">Technos:</span> Docker, AWS, Kubernetes</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Conseils -->
+                <div class="bg-white p-6 rounded-lg shadow-lg animate-slide-up opacity-0" style="animation-delay: 1.2s;">
+                    <h3 class="text-xl font-bold text-primary mb-4">Conseils pour réussir :</h3>
+                    <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                        <li>Pratiquez quotidiennement en réalisant des projets personnels</li>
+                        <li>Contribuez à des projets open-source pour apprendre des autres développeurs</li>
+                        <li>Participez à des hackathons pour développer votre capacité à travailler en équipe</li>
+                        <li>Ne vous limitez pas à un seul langage - chaque langage a ses forces et faiblesses</li>
+                        <li>Documentez votre apprentissage avec un blog ou un portfolio GitHub</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cybersécurité Roadmap -->
+    <section id="roadmap-cyber" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-accent mb-6 animate-slide-up">Roadmap Cybersécurité</h2>
+            <p class="text-center text-gray-700 max-w-2xl mx-auto mb-12 animate-slide-up opacity-0" style="animation-delay: 0.2s;">
+                Parcourez le chemin pour devenir un expert en sécurité informatique
+            </p>
+            
+            <div class="max-w-4xl mx-auto">
+                <!-- Phase 1 -->
+                <div class="mb-12 animate-slide-up opacity-0" style="animation-delay: 0.4s;">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-primary text-white font-bold rounded-full w-10 h-10 flex items-center justify-center mr-4">1</div>
+                        <h3 class="text-2xl font-bold text-accent">Fondamentaux informatiques</h3>
+                    </div>
+                    <div class="ml-14 pl-4 border-l-4 border-primary">
+                        <div class="mb-6">
+                            <h4 class="font-semibold text-primary mb-2">Concepts à maîtriser :</h4>
+                            <ul class="list-disc pl-5 text-gray-700">
+                                <li class="mb-1">Fonctionnement des systèmes d'exploitation (Linux, Windows)</li>
+                                <li class="mb-1">Réseaux informatiques et protocoles (TCP/IP, DNS, HTTP)</li>
+                                <li class="mb-1">Bases de la programmation (Python, Bash)</li>
+                                <li class="mb-1">Architecture des systèmes et virtualisation</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-primary mb-2">Outils recommandés :</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-secondary px-3 py-1 rounded-full text-sm font-medium shadow">Wireshark</span>
+                                <span class="bg-secondary px-3 py-1 rounded-full text-sm font-medium shadow">VirtualBox</span>
+                                <span class="bg-secondary px-3 py-1 rounded-full text-sm font-medium shadow">Nmap</span>
+                                <span class="bg-secondary px-3 py-1 rounded-full text-sm font-medium shadow">Metasploit</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Phase 2 -->
+                <div class="mb-12 animate-slide-up opacity-0" style="animation-delay: 0.6s;">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-primary text-white font-bold rounded-full w-10 h-10 flex items-center justify-center mr-4">2</div>
+                        <h3 class="text-2xl font-bold text-accent">Sécurité offensive</h3>
+                    </div>
+                    <div class="ml-14 pl-4 border-l-4 border-primary">
+                        <div class="mb-6">
+                            <h4 class="font-semibold text-primary mb-2">Concepts à maîtriser :</h4>
+                            <ul class="list-disc pl-5 text-gray-700">
+                                <li class="mb-1">Tests d'intrusion et méthodologies (OWASP, PTES)</li>
+                                <li class="mb-1">Vulnérabilités web et exploitation (XSS, SQLi, CSRF)</li>
+                                <li class="mb-1">Ingénierie sociale et phishing</li>
+                                <li class="mb-1">Analyse des malwares et reverse engineering</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-primary mb-2">Certifications recommandées :</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-secondary px-3 py-1 rounded-full text-sm font-medium shadow">CEH</span>
+                                <span class="bg-secondary px-3 py-1 rounded-full text-sm font-medium shadow">OSCP</span>
+                                <span class="bg-secondary px-3 py-1 rounded-full text-sm font-medium shadow">eJPT</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Phase 3 -->
+                <div class="mb-12 animate-slide-up opacity-0" style="animation-delay: 0.8s;">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-primary text-white font-bold rounded-full w-10 h-10 flex items-center justify-center mr-4">3</div>
+                        <h3 class="text-2xl font-bold text-accent">Sécurité défensive</h3>
+                    </div>
+                    <div class="ml-14 pl-4 border-l-4 border-primary">
+                        <div class="mb-6">
+                            <h4 class="font-semibold text-primary mb-2">Concepts à maîtriser :</h4>
+                            <ul class="list-disc pl-5 text-gray-700">
+                                <li class="mb-1">Détection et réponse aux incidents (SOC)</li>
+                                <li class="mb-1">Gestion des identités et accès (IAM)</li>
+                                <li class="mb-1">Sécurité des réseaux (Firewalls, IDS/IPS)</li>
+                                <li class="mb-1">Cryptographie appliquée</li>
+                                <li class="mb-1">Conformité et réglementations (RGPD, ISO 27001)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-primary mb-2">Technologies recommandées :</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-secondary px-3 py-1 rounded-full text-sm font-medium shadow">SIEM</span>
+                                <span class="bg-secondary px-3 py-1 rounded-full text-sm font-medium shadow">Splunk</span>
+                                <span class="bg-secondary px-3 py-1 rounded-full text-sm font-medium shadow">Snort</span>
+                                <span class="bg-secondary px-3 py-1 rounded-full text-sm font-medium shadow">Burp Suite</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Visual Roadmap -->
+                <div class="bg-white p-8 rounded-xl shadow-xl mb-12 animate-slide-up opacity-0" style="animation-delay: 1s;">
+                    <h3 class="text-2xl font-bold text-primary mb-6 text-center">Cheminement en Cybersécurité</h3>
+                    <div class="relative">
+                        <!-- Timeline -->
+                        <div class="absolute left-1/2 h-full w-1 bg-primary transform -translate-x-1/2"></div>
+                        
+                        <!-- Steps -->
+                        <div class="relative space-y-16">
+                            <!-- Step 1 -->
+                            <div class="flex items-center">
+                                <div class="w-1/2 pr-8 text-right">
+                                    <h4 class="font-bold text-lg text-accent mb-2">Fondamentaux</h4>
+                                    <p class="text-gray-600">Systèmes, Réseaux, Programmation de base</p>
+                                </div>
+                                <div class="w-8 h-8 rounded-full bg-primary border-4 border-white shadow-md absolute left-1/2 transform -translate-x-1/2"></div>
+                                <div class="w-1/2 pl-8">
+                                    <div class="bg-secondary p-4 rounded-lg">
+                                        <p class="text-gray-700"><span class="font-semibold">Outils:</span> Linux, Wireshark, Python</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Step 2 -->
+                            <div class="flex items-center">
+                                <div class="w-1/2 pr-8 text-right">
+                                    <div class="bg-secondary p-4 rounded-lg">
+                                        <p class="text-gray-700"><span class="font-semibold">Outils:</span> Metasploit, Burp Suite, Nmap</p>
+                                    </div>
+                                </div>
+                                <div class="w-8 h-8 rounded-full bg-primary border-4 border-white shadow-md absolute left-1/2 transform -translate-x-1/2"></div>
+                                <div class="w-1/2 pl-8">
+                                    <h4 class="font-bold text-lg text-accent mb-2">Sécurité Offensive</h4>
+                                    <p class="text-gray-600">Tests d'intrusion, Vulnérabilités web, Exploitation</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Step 3 -->
+                            <div class="flex items-center">
+                                <div class="w-1/2 pr-8 text-right">
+                                    <h4 class="font-bold text-lg text-accent mb-2">Sécurité Défensive</h4>
+                                    <p class="text-gray-600">SOC, SIEM, Gestion des incidents</p>
+                                </div>
+                                <div class="w-8 h-8 rounded-full bg-primary border-4 border-white shadow-md absolute left-1/2 transform -translate-x-1/2"></div>
+                                <div class="w-1/2 pl-8">
+                                    <div class="bg-secondary p-4 rounded-lg">
+                                        <p class="text-gray-700"><span class="font-semibold">Outils:</span> Splunk, Snort, IDS/IPS</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Step 4 -->
+                            <div class="flex items-center">
+                                <div class="w-1/2 pr-8 text-right">
+                                    <div class="bg-secondary p-4 rounded-lg">
+                                        <p class="text-gray-700"><span class="font-semibold">Domaines:</span> Cloud, Forensic, RGPD</p>
+                                    </div>
+                                </div>
+                                <div class="w-8 h-8 rounded-full bg-primary border-4 border-white shadow-md absolute left-1/2 transform -translate-x-1/2"></div>
+                                <div class="w-1/2 pl-8">
+                                    <h4 class="font-bold text-lg text-accent mb-2">Spécialisation</h4>
+                                    <p class="text-gray-600">Choix d'une spécialité et certifications</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Conseils -->
+                <div class="bg-secondary p-6 rounded-lg shadow-lg animate-slide-up opacity-0" style="animation-delay: 1.2s;">
+                    <h3 class="text-xl font-bold text-primary mb-4">Conseils pour réussir :</h3>
+                    <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                        <li>Créez votre propre lab de sécurité avec des machines virtuelles</li>
+                        <li>Participez à des CTF (Capture The Flag) pour développer vos compétences pratiques</li>
+                        <li>Suivez l'actualité sécurité via des blogs et podcasts spécialisés</li>
+                        <li>Apprenez à penser comme un attaquant pour mieux défendre</li>
+                        <li>Documentez vos découvertes et créez un blog technique</li>
+                        <li>Obtenez des certifications reconnues par l'industrie pour valider vos compétences</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Frontend vs Backend -->
+    <section id="roadmap-tech" class="py-20 bg-secondary">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-accent mb-12 animate-slide-up">Frontend vs Backend</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+                <!-- Frontend -->
+                <div class="bg-white rounded-xl p-8 shadow-lg card-hover animate-slide-up opacity-0" style="animation-delay: 0.2s;">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-primary rounded-full p-3 mr-4">
+                            <i class="fas fa-paint-brush text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-accent">Développement Frontend</h3>
+                    </div>
+                    <p class="text-gray-700 mb-6">
+                        Le frontend concerne tout ce que l'utilisateur voit et avec quoi il interagit dans une application web.
+                    </p>
+                    
+                    <div class="mb-6">
+                        <h4 class="font-semibold text-primary mb-3">Langages essentiels :</h4>
+                        <div class="space-y-3">
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">HTML5</span>
+                                    <span class="text-sm font-medium">100%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-primary h-2.5 rounded-full progress-bar" style="width: 100%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">CSS3</span>
+                                    <span class="text-sm font-medium">100%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-primary h-2.5 rounded-full progress-bar" style="width: 100%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">JavaScript</span>
+                                    <span class="text-sm font-medium">100%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-primary h-2.5 rounded-full progress-bar" style="width: 100%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold text-primary mb-3">Frameworks populaires :</h4>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="bg-gray-100 p-3 rounded-lg flex items-center">
+                                <img src="https://cdn.worldvectorlogo.com/logos/react-2.svg" alt="React" class="h-6 mr-2">
+                                <span>React</span>
+                            </div>
+                            <div class="bg-gray-100 p-3 rounded-lg flex items-center">
+                                <img src="https://cdn.worldvectorlogo.com/logos/angular-icon-1.svg" alt="Angular" class="h-6 mr-2">
+                                <span>Angular</span>
+                            </div>
+                            <div class="bg-gray-100 p-3 rounded-lg flex items-center">
+                                <img src="https://cdn.worldvectorlogo.com/logos/vue-9.svg" alt="Vue" class="h-6 mr-2">
+                                <span>Vue.js</span>
+                            </div>
+                            <div class="bg-gray-100 p-3 rounded-lg flex items-center">
+                                <img src="https://cdn.worldvectorlogo.com/logos/svelte-1.svg" alt="Svelte" class="h-6 mr-2">
+                                <span>Svelte</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Backend -->
+                <div class="bg-white rounded-xl p-8 shadow-lg card-hover animate-slide-up opacity-0" style="animation-delay: 0.4s;">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-primary rounded-full p-3 mr-4">
+                            <i class="fas fa-server text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-accent">Développement Backend</h3>
+                    </div>
+                    <p class="text-gray-700 mb-6">
+                        Le backend gère la logique métier, les bases de données, l'authentification et tout ce qui se passe côté serveur.
+                    </p>
+                    
+                    <div class="mb-6">
+                        <h4 class="font-semibold text-primary mb-3">Langages essentiels :</h4>
+                        <div class="space-y-3">
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">JavaScript (Node.js)</span>
+                                    <span class="text-sm font-medium">90%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-primary h-2.5 rounded-full progress-bar" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">Python</span>
+                                    <span class="text-sm font-medium">85%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-primary h-2.5 rounded-full progress-bar" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">PHP</span>
+                                    <span class="text-sm font-medium">83%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-primary h-2.5 rounded-full progress-bar" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">Java</span>
+                                    <span class="text-sm font-medium">80%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-primary h-2.5 rounded-full progress-bar" style="width: 80%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold text-primary mb-3">Frameworks populaires :</h4>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="bg-gray-100 p-3 rounded-lg flex items-center">
+                                <img src="https://cdn.worldvectorlogo.com/logos/express-109.svg" alt="Express" class="h-6 mr-2">
+                                <span>Express.js</span>
+                            </div>
+                            <div class="bg-gray-100 p-3 rounded-lg flex items-center">
+                                <img src="https://cdn.worldvectorlogo.com/logos/django.svg" alt="Django" class="h-6 mr-2">
+                                <span>Django</span>
+                            </div>
+                            <div class="bg-gray-100 p-3 rounded-lg flex items-center">
+                                <img src="https://cdn.worldvectorlogo.com/logos/flask.svg" alt="Flask" class="h-6 mr-2">
+                                <span>Flask</span>
+                            </div>
+                            <div class="bg-gray-100 p-3 rounded-lg flex items-center">
+                                <img src="https://cdn.worldvectorlogo.com/logos/laravel-3.svg" alt="Laravel" class="h-6 mr-2">
+                                <span>Laravel</span>
+                            </div>
+                            <div class="bg-gray-100 p-3 rounded-lg flex items-center">
+                                <img src="https://symfony.com/logos/symfony_black_03.svg" alt="Symfony" class="h-6 mr-2">
+                                <span>Symfony</span>
+                            </div>
+                            <div class="bg-gray-100 p-3 rounded-lg flex items-center">
+                                <img src="https://cdn.worldvectorlogo.com/logos/spring-3.svg" alt="Spring" class="h-6 mr-2">
+                                <span>Spring Boot</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 text-center animate-slide-up opacity-0" style="animation-delay: 0.6s;">
+                <h3 class="text-2xl font-bold text-accent mb-6">Full-Stack Developer</h3>
+                <p class="text-gray-700 max-w-2xl mx-auto mb-8">
+                    Un développeur full-stack maîtrise à la fois le frontend et le backend. Voici les compétences clés à acquérir :
+                </p>
+                <div class="max-w-3xl mx-auto bg-white p-8 rounded-xl shadow-lg">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="text-center">
+                            <div class="bg-primary bg-opacity-10 p-4 rounded-full inline-block mb-3">
+                                <i class="fas fa-code text-primary text-2xl"></i>
+                            </div>
+                            <h4 class="font-bold mb-2">Frontend</h4>
+                            <p class="text-sm text-gray-600">React, Vue, Angular, CSS/Sass, Responsive Design</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="bg-primary bg-opacity-10 p-4 rounded-full inline-block mb-3">
+                                <i class="fas fa-database text-primary text-2xl"></i>
+                            </div>
+                            <h4 class="font-bold mb-2">Backend</h4>
+                            <p class="text-sm text-gray-600">Node.js, Express, API REST, Bases de données</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="bg-primary bg-opacity-10 p-4 rounded-full inline-block mb-3">
+                                <i class="fas fa-cloud text-primary text-2xl"></i>
+                            </div>
+                            <h4 class="font-bold mb-2">DevOps</h4>
+                            <p class="text-sm text-gray-600">Docker, CI/CD, Cloud (AWS/GCP), Tests automatisés</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Developer -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto bg-gradient-to-r from-primary to-accent rounded-xl p-8 text-white shadow-xl animate-slide-up opacity-0" style="animation-delay: 0.2s;">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/3 mb-6 md:mb-0 flex justify-center">
+                        <div class="h-40 w-40 rounded-full bg-white flex items-center justify-center shadow-lg overflow-hidden">
+                            <i class="fas fa-user-tie text-primary text-6xl"></i>
+                        </div>
+                    </div>
+                    <div class="md:w-2/3 md:pl-8 text-center md:text-left">
+                        <h3 class="text-2xl font-bold mb-2">À propos de moi</h3>
+                        <p class="mb-4">En tant qu'étudiant en génie logiciel, je suis profondément passionné par l'IT, la technologie en général, et plus spécifiquement par le génie logiciel. Ce site reflète cet enthousiasme et a pour but d'aider les nouveaux venus à naviguer et à exceller dans le monde dynamique de l'informatique.</p>
+                        <div class="flex justify-center md:justify-start space-x-4">
+                            <a href="https://github.com/FulbertDev-AI" class="bg-white text-primary p-2 rounded-full hover:bg-secondary transition" target="_blank">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/ditorga-nanga-7817a331a/" class="bg-white text-primary p-2 rounded-full hover:bg-secondary transition" target="_blank">
+                                <i class="fab fa-linkedin text-xl"></i>
+                            </a>
+                            <a href="tel:+22899792179" class="bg-white text-primary p-2 rounded-full hover:bg-secondary transition" target="_blank">
+                                <i class="fab fa-whatsapp text-xl"></i>
+                            </a>
+                            <a href="mailto:contact.fulbert@gmail.com" class="bg-white text-primary p-2 rounded-full hover:bg-secondary transition" target="_blank">
+                                <i class="fas fa-envelope text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact" class="py-12 sm:py-20 bg-secondary">
+        <div class="container mx-auto px-4 sm:px-6">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-accent mb-8 sm:mb-12 animate-slide-up">Contact</h2>
+            
+            <div class="max-w-2xl mx-auto bg-white rounded-lg sm:rounded-xl shadow-md sm:shadow-lg overflow-hidden animate-slide-up opacity-0" style="animation-delay: 0.2s;">
+                <div class="flex flex-col md:flex-row">
+                    <div class="hidden md:block md:w-2/5 bg-primary p-8 text-white">
+                        <h3 class="text-xl font-bold mb-4">Informations de contact</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt mt-1 mr-3"></i>
+                                <p>Lomé, Togo</p>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-phone-alt mt-1 mr-3"></i>
+                                <p>+228 99 79 21 79</p>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-envelope mt-1 mr-1"></i>
+                                <p>contact.fulbert@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="mt-8">
+                            <h3 class="text-xl font-bold mb-4">Me suivre</h3>
+                            <div class="flex space-x-4">
+                                <a href="https://www.linkedin.com/in/ditorga-nanga-7817a331a/" class="text-white p-2 hover:text-accent transition"  target="_blank">
+                                    <i class="fab fa-linkedin-in text-xl"></i>
+                                </a>
+                                <a href="tel:+22899792179" class="text-white p-2 hover:text-accent transition" target="_blank">
+                                    <i class="fab fa-whatsapp text-xl"></i>
+                                </a>
+                                <a href="mailto:contact.fulbert@gmail.com" class="text-white p-2 hover:text-accent transition" target="_blank">
+                                    <i class="fas fa-envelope text-xl"></i>
+                                </a>
+                                <a href="https://github.com/FulbertDev-AI" class="text-white p-2 hover:text-accent transition" target="_blank">
+                                    <i class="fab fa-github text-xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-3/5 p-8">
+                        <form>
+                            <div class="mb-6">
+                                <label for="name" class="block text-gray-700 font-medium mb-2">Nom complet</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                            </div>
+                            <div class="mb-6">
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Adresse email</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                            </div>
+                            <div class="mb-6">
+                                <label for="subject" class="block text-gray-700 font-medium mb-2">Sujet</label>
+                                <select id="subject" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                                    <option value="">Sélectionnez un sujet</option>
+                                    <option value="orientation">Demande d'orientation</option>
+                                    <option value="question">Question technique</option>
+                                    <option value="partnership">Partenariat</option>
+                                    <option value="other">Autre</option>
+                                </select>
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+                            </div>
+                            <button type="submit" action="https://formsubmit.co/contact.fulbert@gmail.com" method="post" class="w-full bg-primary text-white font-bold py-3 px-4 rounded-lg hover:bg-accent transition duration-300">
+                                Envoyer le message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-8 sm:py-12">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">IT Orientation</h3>
+                    <p class="text-gray-400">Votre guide pour réussir dans le domaine de l'informatique.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Liens rapides</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition">Accueil</a></li>
+                        <li><a href="#filieres" class="text-gray-400 hover:text-white transition">Filières</a></li>
+                        <li><a href="#debouches" class="text-gray-400 hover:text-white transition">Débouchés</a></li>
+                        <li><a href="#roadmap" class="text-gray-400 hover:text-white transition">Roadmap</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Ressources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="https://dnanga.vercel.app/" class="text-gray-400 hover:text-white transition" target="_blank">Blog</a></li>
+                        <!-- <li><a href="#" class="text-gray-400 hover:text-white transition">Tutoriels</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">FAQ</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Glossaire</a></li> -->
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Abonnez-vous pour recevoir nos conseils et actualités.</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Votre email" class="px-4 py-2 w-full rounded-l-lg focus:outline-none text-gray-800">
+                        <button class="bg-primary px-4 rounded-r-lg hover:bg-blue-600 transition">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; <a href="https://dnanga.vercel.app/" class="text-primary hover:underline" target="_blank">Fulbert D. NANGA</a>. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-6 right-6 bg-primary text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-accent">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const menu = document.getElementById('mobile-menu');
+            const button = document.getElementById('mobile-menu-button');
+            if (!menu.contains(event.target) && !button.contains(event.target)) {
+                menu.classList.add('hidden');
+            }
+        });
+
+        // Animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const animateElements = document.querySelectorAll('.animate-slide-up, .animate-fade-in');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            animateElements.forEach(element => {
+                observer.observe(element);
+            });
+            
+            // Back to top button
+            const backToTopButton = document.getElementById('backToTop');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.remove('opacity-0', 'invisible');
+                    backToTopButton.classList.add('opacity-100', 'visible');
+                } else {
+                    backToTopButton.classList.remove('opacity-100', 'visible');
+                    backToTopButton.classList.add('opacity-0', 'invisible');
+                }
+            });
+            
+            backToTopButton.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+            
+            // Progress bar animation
+            const progressBars = document.querySelectorAll('.progress-bar');
+            
+            progressBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 100);
+            });
+            
+            // Mobile menu toggle (would need implementation)
+            const mobileMenuButton = document.querySelector('.md\\:hidden');
+            mobileMenuButton.addEventListener('click', () => {
+                // Implement mobile menu toggle functionality
+                alert('Mobile menu would open here in a full implementation');
+            });
+        });
+    </script>
+</body>
+</html>
