@@ -120,6 +120,10 @@
             transition: width 1s ease-in-out;
         }
     </style>
+
+    <!-- POUR LES ANIMATIONS ET TRANSITIONS -->
+
+<script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
 </head>
 <body class="font-sans bg-gray-50">
     <!-- Navigation -->
@@ -127,7 +131,7 @@
         <div class="container mx-auto px-4 sm:px-6 py-3">
             <div class="flex items-center justify-between">
                 <div class="flex items-center">
-                    <a href="#" class="text-xl sm:text-2xl font-bold text-primary">IT<span class="text-accent">Orientation</span></a>
+                    <a href="https://dnanga.vercel.app/" class="text-xl sm:text-2xl font-bold text-primary" target="_blank">IT<span class="text-accent">Orientation</span></a>
                 </div>
                 <div class="hidden md:flex items-center space-x-6 lg:space-x-8">
                     <a href="#home" class="nav-link text-gray-700 hover:text-primary text-sm lg:text-base">Accueil</a>
@@ -152,11 +156,11 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-bg text-white py-12 sm:py-20">
+    <section id="home" class="hero-bg text-white py-12 sm:py-20 revealing-element-from-bottom">
         <div class="container mx-auto px-4 sm:px-6 text-center hero-content">
             <div class="max-w-4xl mx-auto">
-                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 animate-fade-in">Orientation en Informatique</h1>
-                <p class="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 animate-fade-in opacity-0" style="animation-delay: 0.3s;">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 animate-fade-in revealing-element-from-right">Orientation en Informatique</h1>
+                <p class="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 animate-fade-in opacity-0 revealing-element-from-left" style="animation-delay: 0.3s;">
                     Votre guide complet pour devenir un professionnel en Génie Logiciel ou Cybersécurité
                 </p>
                 <div class="animate-fade-in opacity-0" style="animation-delay: 0.6s;">
@@ -174,11 +178,11 @@
     <!-- Filières Section -->
     <section id="filieres" class="py-20 bg-white">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-accent mb-16 animate-slide-up">Les Filières IT</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-accent mb-16 animate-slide-up revealing-element-from-background">Les Filières IT</h2>
             
             <div class="grid grid-cols-1 gap-6 sm:gap-8 md:gap-10 md:grid-cols-2">
                 <!-- Génie Logiciel Card -->
-                <div class="bg-secondary rounded-xl p-8 shadow-lg card-hover animate-slide-up opacity-0" style="animation-delay: 0.2s;">
+                <div class="bg-secondary rounded-xl p-8 shadow-lg card-hover animate-slide-up opacity-0 revealing-element-from-left" style="animation-delay: 0.2s;">
                     <div class="flex items-center mb-6">
                         <div class="bg-primary rounded-full p-3 mr-4">
                             <i class="fas fa-laptop-code text-white text-2xl"></i>
@@ -203,7 +207,7 @@
                 </div>
                 
                 <!-- Cybersécurité Card -->
-                <div class="bg-secondary rounded-xl p-8 shadow-lg card-hover animate-slide-up opacity-0" style="animation-delay: 0.4s;">
+                <div class="bg-secondary rounded-xl p-8 shadow-lg card-hover animate-slide-up opacity-0 revealing-element-from-right" style="animation-delay: 0.4s;">
                     <div class="flex items-center mb-6">
                         <div class="bg-primary rounded-full p-3 mr-4">
                             <i class="fas fa-shield-alt text-white text-2xl"></i>
@@ -234,8 +238,8 @@
                     <!-- Génie Logiciel -->
                     <div class="bg-white p-6 rounded-lg shadow-md card-hover">
                         <i class="fas fa-laptop-code text-primary text-4xl mb-4"></i>
-                        <h4 class="font-bold text-lg mb-2">Génie Logiciel</h4>
-                        <ul class="text-left text-gray-600 space-y-3">
+                        <h4 class="font-bold text-lg mb-2 revealing-element-from-top">Génie Logiciel</h4>
+                        <ul class="text-left text-gray-600 space-y-3 revealing-element-from-background">
                             <li><span class="font-bold">Développeur Full-Stack</span> - Crée des applications web complètes (frontend + backend)</li>
                             <li><span class="font-bold">Architecte logiciel</span> - Conçoit l'architecture technique des systèmes complexes</li>
                             <li><span class="font-bold">Ingénieur DevOps</span> - Automatise les déploiements et gère l'infrastructure</li>
@@ -247,8 +251,8 @@
                     <!-- Cybersécurité -->
                     <div class="bg-white p-6 rounded-lg shadow-md card-hover">
                         <i class="fas fa-shield-alt text-primary text-4xl mb-4"></i>
-                        <h4 class="font-bold text-lg mb-2">Cybersécurité</h4>
-                        <ul class="text-left text-gray-600 space-y-3">
+                        <h4 class="font-bold text-lg mb-2 revealing-element-from-top">Cybersécurité</h4>
+                        <ul class="text-left text-gray-600 space-y-3 revealing-element-from-background">
                             <li><span class="font-bold">Analyste SOC</span> - Surveille et répond aux incidents de sécurité</li>
                             <li><span class="font-bold">Pentester</span> - Effectue des tests d'intrusion pour évaluer la sécurité</li>
                             <li><span class="font-bold">Consultant en sécurité</span> - Audite et conseille les entreprises</li>
@@ -258,10 +262,10 @@
                     </div>
                     
                     <!-- Autres métiers IT -->
-                    <div class="bg-white p-6 rounded-lg shadow-md card-hover">
+                    <div class="bg-white p-6 rounded-lg shadow-md card-hover revealing-element-from-top">
                         <i class="fas fa-server text-primary text-4xl mb-4"></i>
-                        <h4 class="font-bold text-lg mb-2">Autres métiers IT</h4>
-                        <ul class="text-left text-gray-600 space-y-3">
+                        <h4 class="font-bold text-lg mb-2 revealing-element-from-top">Autres métiers IT</h4>
+                        <ul class="text-left text-gray-600 space-y-3 revealing-element-from-background">
                             <li><span class="font-bold">Data Scientist</span> - Analyse et modélise des données complexes</li>
                             <li><span class="font-bold">Administrateur système</span> - Gère les serveurs et l'infrastructure réseau</li>
                             <li><span class="font-bold">Expert Cloud</span> - Déploie des solutions sur AWS, Azure ou GCP</li>
@@ -270,7 +274,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="mt-8 text-gray-600 max-w-3xl mx-auto">
+                <div class="mt-8 text-gray-600 max-w-3xl mx-auto revealing-element-from-bottom">
                     <p>Ces métiers offrent des salaires attractifs et d'excellentes perspectives d'évolution. La plupart demandent une formation technique solide et une veille constante sur les nouvelles technologies.</p>
                 </div>
             </div>
@@ -280,8 +284,8 @@
     <!-- Génie Logiciel Roadmap -->
     <section id="roadmap" class="py-20 bg-secondary">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-accent mb-6 animate-slide-up">Roadmap Génie Logiciel</h2>
-            <p class="text-center text-gray-700 max-w-2xl mx-auto mb-12 animate-slide-up opacity-0" style="animation-delay: 0.2s;">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-accent mb-6 animate-slide-up revealing-element-from-left">Roadmap Génie Logiciel</h2>
+            <p class="text-center text-gray-700 max-w-2xl mx-auto mb-12 animate-slide-up opacity-0 revealing-element-from-right" style="animation-delay: 0.2s;">
                 Devenez un développeur full-stack compétent en suivant cette progression étape par étape
             </p>
             
@@ -290,9 +294,9 @@
                 <div class="mb-12 animate-slide-up opacity-0" style="animation-delay: 0.4s;">
                     <div class="flex items-center mb-4">
                         <div class="bg-primary text-white font-bold rounded-full w-10 h-10 flex items-center justify-center mr-4">1</div>
-                        <h3 class="text-2xl font-bold text-accent">Fondamentaux de la programmation</h3>
+                        <h3 class="text-2xl font-bold text-accent revealing-element-from-background">Fondamentaux de la programmation</h3>
                     </div>
-                    <div class="ml-14 pl-4 border-l-4 border-primary">
+                    <div class="ml-14 pl-4 border-l-4 border-primary revealing-element-from-bottom">
                         <div class="mb-6">
                             <h4 class="font-semibold text-primary mb-2">Concepts à maîtriser :</h4>
                             <ul class="list-disc pl-5 text-gray-700">
@@ -317,9 +321,9 @@
                 <div class="mb-12 animate-slide-up opacity-0" style="animation-delay: 0.6s;">
                     <div class="flex items-center mb-4">
                         <div class="bg-primary text-white font-bold rounded-full w-10 h-10 flex items-center justify-center mr-4">2</div>
-                        <h3 class="text-2xl font-bold text-accent">Développement Web & Bases de données</h3>
+                        <h3 class="text-2xl font-bold text-accent revealing-element-from-background">Développement Web & Bases de données</h3>
                     </div>
-                    <div class="ml-14 pl-4 border-l-4 border-primary">
+                    <div class="ml-14 pl-4 border-l-4 border-primary revealing-element-from-bottom">
                         <div class="mb-6">
                             <h4 class="font-semibold text-primary mb-2">Concepts à maîtriser :</h4>
                             <ul class="list-disc pl-5 text-gray-700">
@@ -345,9 +349,9 @@
                 <div class="mb-12 animate-slide-up opacity-0" style="animation-delay: 0.8s;">
                     <div class="flex items-center mb-4">
                         <div class="bg-primary text-white font-bold rounded-full w-10 h-10 flex items-center justify-center mr-4">3</div>
-                        <h3 class="text-2xl font-bold text-accent">Architecture logicielle avancée</h3>
+                        <h3 class="text-2xl font-bold text-accent revealing-element-from-background">Architecture logicielle avancée</h3>
                     </div>
-                    <div class="ml-14 pl-4 border-l-4 border-primary">
+                    <div class="ml-14 pl-4 border-l-4 border-primary revealing-element-from-bottom">
                         <div class="mb-6">
                             <h4 class="font-semibold text-primary mb-2">Concepts à maîtriser :</h4>
                             <ul class="list-disc pl-5 text-gray-700">
@@ -370,8 +374,8 @@
                 </div>
                 
                 <!-- Visual Roadmap -->
-                <div class="bg-white p-8 rounded-xl shadow-xl mb-12 animate-slide-up opacity-0" style="animation-delay: 1s;">
-                    <h3 class="text-2xl font-bold text-primary mb-6 text-center">Cheminement Full-Stack</h3>
+                <div class="bg-white p-8 rounded-xl shadow-xl mb-12 animate-slide-up opacity-0 revealing-element-from-bottom" style="animation-delay: 1s;">
+                    <h3 class="text-2xl font-bold text-primary mb-6 text-center revealing-element-from-top">Cheminement Full-Stack</h3>
                     <div class="relative">
                         <!-- Timeline -->
                         <div class="absolute left-1/2 h-full w-1 bg-primary transform -translate-x-1/2"></div>
@@ -381,13 +385,13 @@
                             <!-- Step 1 -->
                             <div class="flex items-center">
                                 <div class="w-1/2 pr-8 text-right">
-                                    <h4 class="font-bold text-lg text-accent mb-2">Fondamentaux</h4>
-                                    <p class="text-gray-600">Algorithmes, Structures de données, Programmation de base</p>
+                                    <h4 class="font-bold text-lg text-accent mb-2 revealing-element-from-left">Fondamentaux</h4>
+                                    <p class="text-gray-600 revealing-element-from-background">Algorithmes, Structures de données, Programmation de base</p>
                                 </div>
                                 <div class="w-8 h-8 rounded-full bg-primary border-4 border-white shadow-md absolute left-1/2 transform -translate-x-1/2"></div>
                                 <div class="w-1/2 pl-8">
                                     <div class="bg-secondary p-4 rounded-lg">
-                                        <p class="text-gray-700"><span class="font-semibold">Technos:</span> Python, Java, C</p>
+                                        <p class="text-gray-700 revealing-element-from-right"><span class="font-semibold">Technos:</span> Python, Java, C</p>
                                     </div>
                                 </div>
                             </div>
@@ -396,12 +400,12 @@
                             <div class="flex items-center">
                                 <div class="w-1/2 pr-8 text-right">
                                     <div class="bg-secondary p-4 rounded-lg">
-                                        <p class="text-gray-700"><span class="font-semibold">Technos:</span> HTML/CSS, JavaScript, SQL</p>
+                                        <p class="text-gray-700 revealing-element-from-left"><span class="font-semibold">Technos:</span> HTML/CSS, JavaScript, SQL</p>
                                     </div>
                                 </div>
                                 <div class="w-8 h-8 rounded-full bg-primary border-4 border-white shadow-md absolute left-1/2 transform -translate-x-1/2"></div>
                                 <div class="w-1/2 pl-8">
-                                    <h4 class="font-bold text-lg text-accent mb-2">Développement Web</h4>
+                                    <h4 class="font-bold text-lg text-accent mb-2 revealing-element-from-right">Développement Web</h4>
                                     <p class="text-gray-600">Frontend basics, Bases de données, API REST</p>
                                 </div>
                             </div>
@@ -409,13 +413,13 @@
                             <!-- Step 3 -->
                             <div class="flex items-center">
                                 <div class="w-1/2 pr-8 text-right">
-                                    <h4 class="font-bold text-lg text-accent mb-2">Frameworks Frontend</h4>
-                                    <p class="text-gray-600">Applications interactives, State management</p>
+                                    <h4 class="font-bold text-lg text-accent mb-2 revealing-element-from-left">Frameworks Frontend</h4>
+                                    <p class="text-gray-600 revealing-element-from-left">Applications interactives, State management</p>
                                 </div>
                                 <div class="w-8 h-8 rounded-full bg-primary border-4 border-white shadow-md absolute left-1/2 transform -translate-x-1/2"></div>
                                 <div class="w-1/2 pl-8">
                                     <div class="bg-secondary p-4 rounded-lg">
-                                        <p class="text-gray-700"><span class="font-semibold">Technos:</span> React, Vue, Angular</p>
+                                        <p class="text-gray-700 revealing-element-from-right"><span class="font-semibold">Technos:</span> React, Vue, Angular</p>
                                     </div>
                                 </div>
                             </div>
@@ -424,26 +428,26 @@
                             <div class="flex items-center">
                                 <div class="w-1/2 pr-8 text-right">
                                     <div class="bg-secondary p-4 rounded-lg">
-                                        <p class="text-gray-700"><span class="font-semibold">Technos:</span> Node.js, Express, Django</p>
+                                        <p class="text-gray-700 revealing-element-from-left"><span class="font-semibold">Technos:</span> Node.js, Express, Django</p>
                                     </div>
                                 </div>
                                 <div class="w-8 h-8 rounded-full bg-primary border-4 border-white shadow-md absolute left-1/2 transform -translate-x-1/2"></div>
                                 <div class="w-1/2 pl-8">
-                                    <h4 class="font-bold text-lg text-accent mb-2">Backend Avancé</h4>
-                                    <p class="text-gray-600">Authentification, Microservices, Optimisation</p>
+                                    <h4 class="font-bold text-lg text-accent mb-2 revealing-element-from-right">Backend Avancé</h4>
+                                    <p class="text-gray-600 revealing-element-from-right">Authentification, Microservices, Optimisation</p>
                                 </div>
                             </div>
                             
                             <!-- Step 5 -->
                             <div class="flex items-center">
                                 <div class="w-1/2 pr-8 text-right">
-                                    <h4 class="font-bold text-lg text-accent mb-2">DevOps & Cloud</h4>
-                                    <p class="text-gray-600">Déploiement, CI/CD, Infrastructure as Code</p>
+                                    <h4 class="font-bold text-lg text-accent mb-2 revealing-element-from-left">DevOps & Cloud</h4>
+                                    <p class="text-gray-600 revealing-element-from-left">Déploiement, CI/CD, Infrastructure as Code</p>
                                 </div>
                                 <div class="w-8 h-8 rounded-full bg-primary border-4 border-white shadow-md absolute left-1/2 transform -translate-x-1/2"></div>
                                 <div class="w-1/2 pl-8">
                                     <div class="bg-secondary p-4 rounded-lg">
-                                        <p class="text-gray-700"><span class="font-semibold">Technos:</span> Docker, AWS, Kubernetes</p>
+                                        <p class="text-gray-700 revealing-element-from-right"><span class="font-semibold">Technos:</span> Docker, AWS, Kubernetes</p>
                                     </div>
                                 </div>
                             </div>
@@ -453,8 +457,8 @@
                 
                 <!-- Conseils -->
                 <div class="bg-white p-6 rounded-lg shadow-lg animate-slide-up opacity-0" style="animation-delay: 1.2s;">
-                    <h3 class="text-xl font-bold text-primary mb-4">Conseils pour réussir :</h3>
-                    <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                    <h3 class="text-xl font-bold text-primary mb-4 revealing-element-from-left">Conseils pour réussir :</h3>
+                    <ul class="list-disc pl-5 text-gray-700 space-y-2 revealing-element-from-background">
                         <li>Pratiquez quotidiennement en réalisant des projets personnels</li>
                         <li>Contribuez à des projets open-source pour apprendre des autres développeurs</li>
                         <li>Participez à des hackathons pour développer votre capacité à travailler en équipe</li>
@@ -467,10 +471,10 @@
     </section>
 
     <!-- Cybersécurité Roadmap -->
-    <section id="roadmap-cyber" class="py-20 bg-white">
+    <section id="roadmap-cyber" class="py-20 bg-white revealing-element-from-bottom">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-accent mb-6 animate-slide-up">Roadmap Cybersécurité</h2>
-            <p class="text-center text-gray-700 max-w-2xl mx-auto mb-12 animate-slide-up opacity-0" style="animation-delay: 0.2s;">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-accent mb-6 animate-slide-up revealing-element-from-top">Roadmap Cybersécurité</h2>
+            <p class="text-center text-gray-700 max-w-2xl mx-auto mb-12 animate-slide-up opacity-0 revealing-element-from-right" style="animation-delay: 0.2s;">
                 Parcourez le chemin pour devenir un expert en sécurité informatique
             </p>
             
@@ -479,9 +483,9 @@
                 <div class="mb-12 animate-slide-up opacity-0" style="animation-delay: 0.4s;">
                     <div class="flex items-center mb-4">
                         <div class="bg-primary text-white font-bold rounded-full w-10 h-10 flex items-center justify-center mr-4">1</div>
-                        <h3 class="text-2xl font-bold text-accent">Fondamentaux informatiques</h3>
+                        <h3 class="text-2xl font-bold text-accent revealing-element-from-left">Fondamentaux informatiques</h3>
                     </div>
-                    <div class="ml-14 pl-4 border-l-4 border-primary">
+                    <div class="ml-14 pl-4 border-l-4 border-primary revealing-element-from-background">
                         <div class="mb-6">
                             <h4 class="font-semibold text-primary mb-2">Concepts à maîtriser :</h4>
                             <ul class="list-disc pl-5 text-gray-700">
@@ -492,7 +496,7 @@
                             </ul>
                         </div>
                         <div>
-                            <h4 class="font-semibold text-primary mb-2">Outils recommandés :</h4>
+                            <h4 class="font-semibold text-primary mb-2 revealing-element-from-bottom">Outils recommandés :</h4>
                             <div class="flex flex-wrap gap-2">
                                 <span class="bg-secondary px-3 py-1 rounded-full text-sm font-medium shadow">Wireshark</span>
                                 <span class="bg-secondary px-3 py-1 rounded-full text-sm font-medium shadow">VirtualBox</span>
@@ -507,11 +511,11 @@
                 <div class="mb-12 animate-slide-up opacity-0" style="animation-delay: 0.6s;">
                     <div class="flex items-center mb-4">
                         <div class="bg-primary text-white font-bold rounded-full w-10 h-10 flex items-center justify-center mr-4">2</div>
-                        <h3 class="text-2xl font-bold text-accent">Sécurité offensive</h3>
+                        <h3 class="text-2xl font-bold text-accent revealing-element-from-left">Sécurité offensive</h3>
                     </div>
                     <div class="ml-14 pl-4 border-l-4 border-primary">
                         <div class="mb-6">
-                            <h4 class="font-semibold text-primary mb-2">Concepts à maîtriser :</h4>
+                            <h4 class="font-semibold text-primary mb-2 revealing-element-from-background">Concepts à maîtriser :</h4>
                             <ul class="list-disc pl-5 text-gray-700">
                                 <li class="mb-1">Tests d'intrusion et méthodologies (OWASP, PTES)</li>
                                 <li class="mb-1">Vulnérabilités web et exploitation (XSS, SQLi, CSRF)</li>
@@ -520,7 +524,7 @@
                             </ul>
                         </div>
                         <div>
-                            <h4 class="font-semibold text-primary mb-2">Certifications recommandées :</h4>
+                            <h4 class="font-semibold text-primary mb-2 revealing-element-from-bottom">Certifications recommandées :</h4>
                             <div class="flex flex-wrap gap-2">
                                 <span class="bg-secondary px-3 py-1 rounded-full text-sm font-medium shadow">CEH</span>
                                 <span class="bg-secondary px-3 py-1 rounded-full text-sm font-medium shadow">OSCP</span>
@@ -534,11 +538,11 @@
                 <div class="mb-12 animate-slide-up opacity-0" style="animation-delay: 0.8s;">
                     <div class="flex items-center mb-4">
                         <div class="bg-primary text-white font-bold rounded-full w-10 h-10 flex items-center justify-center mr-4">3</div>
-                        <h3 class="text-2xl font-bold text-accent">Sécurité défensive</h3>
+                        <h3 class="text-2xl font-bold text-accent revealing-element-from-left">Sécurité défensive</h3>
                     </div>
                     <div class="ml-14 pl-4 border-l-4 border-primary">
                         <div class="mb-6">
-                            <h4 class="font-semibold text-primary mb-2">Concepts à maîtriser :</h4>
+                            <h4 class="font-semibold text-primary mb-2 revealing-element-from-background">Concepts à maîtriser :</h4>
                             <ul class="list-disc pl-5 text-gray-700">
                                 <li class="mb-1">Détection et réponse aux incidents (SOC)</li>
                                 <li class="mb-1">Gestion des identités et accès (IAM)</li>
@@ -548,7 +552,7 @@
                             </ul>
                         </div>
                         <div>
-                            <h4 class="font-semibold text-primary mb-2">Technologies recommandées :</h4>
+                            <h4 class="font-semibold text-primary mb-2 revealing-element-from-bottom">Technologies recommandées :</h4>
                             <div class="flex flex-wrap gap-2">
                                 <span class="bg-secondary px-3 py-1 rounded-full text-sm font-medium shadow">SIEM</span>
                                 <span class="bg-secondary px-3 py-1 rounded-full text-sm font-medium shadow">Splunk</span>
@@ -561,7 +565,7 @@
                 
                 <!-- Visual Roadmap -->
                 <div class="bg-white p-8 rounded-xl shadow-xl mb-12 animate-slide-up opacity-0" style="animation-delay: 1s;">
-                    <h3 class="text-2xl font-bold text-primary mb-6 text-center">Cheminement en Cybersécurité</h3>
+                    <h3 class="text-2xl font-bold text-primary mb-6 text-center revealing-element-from-top">Cheminement en Cybersécurité</h3>
                     <div class="relative">
                         <!-- Timeline -->
                         <div class="absolute left-1/2 h-full w-1 bg-primary transform -translate-x-1/2"></div>
@@ -571,13 +575,13 @@
                             <!-- Step 1 -->
                             <div class="flex items-center">
                                 <div class="w-1/2 pr-8 text-right">
-                                    <h4 class="font-bold text-lg text-accent mb-2">Fondamentaux</h4>
-                                    <p class="text-gray-600">Systèmes, Réseaux, Programmation de base</p>
+                                    <h4 class="font-bold text-lg text-accent mb-2 revealing-element-from-left">Fondamentaux</h4>
+                                    <p class="text-gray-600 revealing-element-from-background">Systèmes, Réseaux, Programmation de base</p>
                                 </div>
                                 <div class="w-8 h-8 rounded-full bg-primary border-4 border-white shadow-md absolute left-1/2 transform -translate-x-1/2"></div>
                                 <div class="w-1/2 pl-8">
                                     <div class="bg-secondary p-4 rounded-lg">
-                                        <p class="text-gray-700"><span class="font-semibold">Outils:</span> Linux, Wireshark, Python</p>
+                                        <p class="text-gray-700 revealing-element-from-right"><span class="font-semibold">Outils:</span> Linux, Wireshark, Python</p>
                                     </div>
                                 </div>
                             </div>
@@ -586,26 +590,26 @@
                             <div class="flex items-center">
                                 <div class="w-1/2 pr-8 text-right">
                                     <div class="bg-secondary p-4 rounded-lg">
-                                        <p class="text-gray-700"><span class="font-semibold">Outils:</span> Metasploit, Burp Suite, Nmap</p>
+                                        <p class="text-gray-700 revealing-element-from-left"><span class="font-semibold">Outils:</span> Metasploit, Burp Suite, Nmap</p>
                                     </div>
                                 </div>
                                 <div class="w-8 h-8 rounded-full bg-primary border-4 border-white shadow-md absolute left-1/2 transform -translate-x-1/2"></div>
                                 <div class="w-1/2 pl-8">
-                                    <h4 class="font-bold text-lg text-accent mb-2">Sécurité Offensive</h4>
-                                    <p class="text-gray-600">Tests d'intrusion, Vulnérabilités web, Exploitation</p>
+                                    <h4 class="font-bold text-lg text-accent mb-2 revealing-element-from-right">Sécurité Offensive</h4>
+                                    <p class="text-gray-600 revealing-element-from-right">Tests d'intrusion, Vulnérabilités web, Exploitation</p>
                                 </div>
                             </div>
                             
                             <!-- Step 3 -->
                             <div class="flex items-center">
                                 <div class="w-1/2 pr-8 text-right">
-                                    <h4 class="font-bold text-lg text-accent mb-2">Sécurité Défensive</h4>
-                                    <p class="text-gray-600">SOC, SIEM, Gestion des incidents</p>
+                                    <h4 class="font-bold text-lg text-accent mb-2 revealing-element-from-left">Sécurité Défensive</h4>
+                                    <p class="text-gray-600 revealing-element-from-left">SOC, SIEM, Gestion des incidents</p>
                                 </div>
                                 <div class="w-8 h-8 rounded-full bg-primary border-4 border-white shadow-md absolute left-1/2 transform -translate-x-1/2"></div>
                                 <div class="w-1/2 pl-8">
                                     <div class="bg-secondary p-4 rounded-lg">
-                                        <p class="text-gray-700"><span class="font-semibold">Outils:</span> Splunk, Snort, IDS/IPS</p>
+                                        <p class="text-gray-700 revealing-element-from-right"><span class="font-semibold">Outils:</span> Splunk, Snort, IDS/IPS</p>
                                     </div>
                                 </div>
                             </div>
@@ -614,13 +618,13 @@
                             <div class="flex items-center">
                                 <div class="w-1/2 pr-8 text-right">
                                     <div class="bg-secondary p-4 rounded-lg">
-                                        <p class="text-gray-700"><span class="font-semibold">Domaines:</span> Cloud, Forensic, RGPD</p>
+                                        <p class="text-gray-700 revealing-element-from-left"><span class="font-semibold">Domaines:</span> Cloud, Forensic, RGPD</p>
                                     </div>
                                 </div>
                                 <div class="w-8 h-8 rounded-full bg-primary border-4 border-white shadow-md absolute left-1/2 transform -translate-x-1/2"></div>
                                 <div class="w-1/2 pl-8">
-                                    <h4 class="font-bold text-lg text-accent mb-2">Spécialisation</h4>
-                                    <p class="text-gray-600">Choix d'une spécialité et certifications</p>
+                                    <h4 class="font-bold text-lg text-accent mb-2 revealing-element-from-right">Spécialisation</h4>
+                                    <p class="text-gray-600 revealing-element-from-right">Choix d'une spécialité et certifications</p>
                                 </div>
                             </div>
                         </div>
@@ -628,9 +632,9 @@
                 </div>
                 
                 <!-- Conseils -->
-                <div class="bg-secondary p-6 rounded-lg shadow-lg animate-slide-up opacity-0" style="animation-delay: 1.2s;">
-                    <h3 class="text-xl font-bold text-primary mb-4">Conseils pour réussir :</h3>
-                    <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                <div class="bg-secondary p-6 rounded-lg shadow-lg animate-slide-up opacity-0 revealing-element-from-bottom" style="animation-delay: 1.2s;">
+                    <h3 class="text-xl font-bold text-primary mb-4 revealing-element-from-top">Conseils pour réussir :</h3>
+                    <ul class="list-disc pl-5 text-gray-700 space-y-2 revealing-element-from-background">
                         <li>Créez votre propre lab de sécurité avec des machines virtuelles</li>
                         <li>Participez à des CTF (Capture The Flag) pour développer vos compétences pratiques</li>
                         <li>Suivez l'actualité sécurité via des blogs et podcasts spécialisés</li>
@@ -644,28 +648,28 @@
     </section>
 
     <!-- Frontend vs Backend -->
-    <section id="roadmap-tech" class="py-20 bg-secondary">
+    <section id="roadmap-tech" class="py-20 bg-secondary revealing-element-from-bottom">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-accent mb-12 animate-slide-up">Frontend vs Backend</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-accent mb-12 animate-slide-up revealing-element-from-top">Frontend vs Backend</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
                 <!-- Frontend -->
-                <div class="bg-white rounded-xl p-8 shadow-lg card-hover animate-slide-up opacity-0" style="animation-delay: 0.2s;">
+                <div class="bg-white rounded-xl p-8 shadow-lg card-hover animate-slide-up opacity-0 revealing-element-from-left" style="animation-delay: 0.2s;">
                     <div class="flex items-center mb-6">
                         <div class="bg-primary rounded-full p-3 mr-4">
                             <i class="fas fa-paint-brush text-white text-2xl"></i>
                         </div>
-                        <h3 class="text-2xl font-bold text-accent">Développement Frontend</h3>
+                        <h3 class="text-2xl font-bold text-accent revealing-element-from-right">Développement Frontend</h3>
                     </div>
-                    <p class="text-gray-700 mb-6">
+                    <p class="text-gray-700 mb-6 revealing-element-from-background">
                         Le frontend concerne tout ce que l'utilisateur voit et avec quoi il interagit dans une application web.
                     </p>
                     
                     <div class="mb-6">
-                        <h4 class="font-semibold text-primary mb-3">Langages essentiels :</h4>
+                        <h4 class="font-semibold text-primary mb-3 revealing-element-from-left">Langages essentiels :</h4>
                         <div class="space-y-3">
                             <div>
-                                <div class="flex justify-between mb-1">
+                                <div class="flex justify-between mb-1 revealing-element-from-left">
                                     <span class="font-medium">HTML5</span>
                                     <span class="text-sm font-medium">100%</span>
                                 </div>
@@ -674,7 +678,7 @@
                                 </div>
                             </div>
                             <div>
-                                <div class="flex justify-between mb-1">
+                                <div class="flex justify-between mb-1 revealing-element-from-right">
                                     <span class="font-medium">CSS3</span>
                                     <span class="text-sm font-medium">100%</span>
                                 </div>
@@ -683,7 +687,7 @@
                                 </div>
                             </div>
                             <div>
-                                <div class="flex justify-between mb-1">
+                                <div class="flex justify-between mb-1 revealing-element-from-bottom">
                                     <span class="font-medium">JavaScript</span>
                                     <span class="text-sm font-medium">100%</span>
                                 </div>
@@ -695,8 +699,8 @@
                     </div>
                     
                     <div>
-                        <h4 class="font-semibold text-primary mb-3">Frameworks populaires :</h4>
-                        <div class="grid grid-cols-2 gap-3">
+                        <h4 class="font-semibold text-primary mb-3 revealing-element-from-background">Frameworks populaires :</h4>
+                        <div class="grid grid-cols-2 gap-3 revealing-element-from-bottom">
                             <div class="bg-gray-100 p-3 rounded-lg flex items-center">
                                 <img src="https://cdn.worldvectorlogo.com/logos/react-2.svg" alt="React" class="h-6 mr-2">
                                 <span>React</span>
@@ -718,23 +722,23 @@
                 </div>
                 
                 <!-- Backend -->
-                <div class="bg-white rounded-xl p-8 shadow-lg card-hover animate-slide-up opacity-0" style="animation-delay: 0.4s;">
+                <div class="bg-white rounded-xl p-8 shadow-lg card-hover animate-slide-up opacity-0 revealing-element-from-bottom" style="animation-delay: 0.4s;">
                     <div class="flex items-center mb-6">
                         <div class="bg-primary rounded-full p-3 mr-4">
                             <i class="fas fa-server text-white text-2xl"></i>
                         </div>
-                        <h3 class="text-2xl font-bold text-accent">Développement Backend</h3>
+                        <h3 class="text-2xl font-bold text-accent revealing-element-from-right">Développement Backend</h3>
                     </div>
-                    <p class="text-gray-700 mb-6">
+                    <p class="text-gray-700 mb-6 revealing-element-from-background">
                         Le backend gère la logique métier, les bases de données, l'authentification et tout ce qui se passe côté serveur.
                     </p>
                     
                     <div class="mb-6">
-                        <h4 class="font-semibold text-primary mb-3">Langages essentiels :</h4>
+                        <h4 class="font-semibold text-primary mb-3 revealing-element-from-left">Langages essentiels :</h4>
                         <div class="space-y-3">
                             <div>
                                 <div class="flex justify-between mb-1">
-                                    <span class="font-medium">JavaScript (Node.js)</span>
+                                    <span class="font-medium revealing-element-from-right">JavaScript (Node.js)</span>
                                     <span class="text-sm font-medium">90%</span>
                                 </div>
                                 <div class="w-full bg-gray-200 rounded-full h-2.5">
@@ -742,7 +746,7 @@
                                 </div>
                             </div>
                             <div>
-                                <div class="flex justify-between mb-1">
+                                <div class="flex justify-between mb-1 revealing-element-from-left">
                                     <span class="font-medium">Python</span>
                                     <span class="text-sm font-medium">85%</span>
                                 </div>
@@ -751,7 +755,7 @@
                                 </div>
                             </div>
                             <div>
-                                <div class="flex justify-between mb-1">
+                                <div class="flex justify-between mb-1 revealing-element-from-bottom">
                                     <span class="font-medium">PHP</span>
                                     <span class="text-sm font-medium">83%</span>
                                 </div>
@@ -760,7 +764,7 @@
                                 </div>
                             </div>
                             <div>
-                                <div class="flex justify-between mb-1">
+                                <div class="flex justify-between mb-1 revealing-element-from-top">
                                     <span class="font-medium">Java</span>
                                     <span class="text-sm font-medium">80%</span>
                                 </div>
@@ -772,8 +776,8 @@
                     </div>
                     
                     <div>
-                        <h4 class="font-semibold text-primary mb-3">Frameworks populaires :</h4>
-                        <div class="grid grid-cols-2 gap-3">
+                        <h4 class="font-semibold text-primary mb-3 revealing-element-from-background">Frameworks populaires :</h4>
+                        <div class="grid grid-cols-2 gap-3 revealing-element-from-bottom">
                             <div class="bg-gray-100 p-3 rounded-lg flex items-center">
                                 <img src="https://cdn.worldvectorlogo.com/logos/express-109.svg" alt="Express" class="h-6 mr-2">
                                 <span>Express.js</span>
@@ -804,27 +808,27 @@
             </div>
             
             <div class="mt-16 text-center animate-slide-up opacity-0" style="animation-delay: 0.6s;">
-                <h3 class="text-2xl font-bold text-accent mb-6">Full-Stack Developer</h3>
-                <p class="text-gray-700 max-w-2xl mx-auto mb-8">
+                <h3 class="text-2xl font-bold text-accent mb-6 revealing-element-from-top">Full-Stack Developer</h3>
+                <p class="text-gray-700 max-w-2xl mx-auto mb-8 revealing-element-from-background">
                     Un développeur full-stack maîtrise à la fois le frontend et le backend. Voici les compétences clés à acquérir :
                 </p>
                 <div class="max-w-3xl mx-auto bg-white p-8 rounded-xl shadow-lg">
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div class="text-center">
+                        <div class="text-center revealing-element-from-left">
                             <div class="bg-primary bg-opacity-10 p-4 rounded-full inline-block mb-3">
                                 <i class="fas fa-code text-primary text-2xl"></i>
                             </div>
                             <h4 class="font-bold mb-2">Frontend</h4>
                             <p class="text-sm text-gray-600">React, Vue, Angular, CSS/Sass, Responsive Design</p>
                         </div>
-                        <div class="text-center">
+                        <div class="text-center revealing-element-from-bottom">
                             <div class="bg-primary bg-opacity-10 p-4 rounded-full inline-block mb-3">
                                 <i class="fas fa-database text-primary text-2xl"></i>
                             </div>
                             <h4 class="font-bold mb-2">Backend</h4>
                             <p class="text-sm text-gray-600">Node.js, Express, API REST, Bases de données</p>
                         </div>
-                        <div class="text-center">
+                        <div class="text-center revealing-element-from-right">
                             <div class="bg-primary bg-opacity-10 p-4 rounded-full inline-block mb-3">
                                 <i class="fas fa-cloud text-primary text-2xl"></i>
                             </div>
@@ -838,19 +842,19 @@
     </section>
 
     <!-- About Developer -->
-    <section class="py-16 bg-white">
+    <section class="py-16 bg-white revealing-element-from-bottom">
         <div class="container mx-auto px-6">
             <div class="max-w-4xl mx-auto bg-gradient-to-r from-primary to-accent rounded-xl p-8 text-white shadow-xl animate-slide-up opacity-0" style="animation-delay: 0.2s;">
                 <div class="flex flex-col md:flex-row items-center">
                     <div class="md:w-1/3 mb-6 md:mb-0 flex justify-center">
-                        <div class="h-40 w-40 rounded-full bg-white flex items-center justify-center shadow-lg overflow-hidden">
+                        <div class="h-40 w-40 rounded-full bg-white flex items-center justify-center shadow-lg overflow-hidden revealing-element-from-left">
                             <i class="fas fa-user-tie text-primary text-6xl"></i>
                         </div>
                     </div>
                     <div class="md:w-2/3 md:pl-8 text-center md:text-left">
-                        <h3 class="text-2xl font-bold mb-2">À propos de moi</h3>
-                        <p class="mb-4">En tant qu'étudiant en génie logiciel, je suis profondément passionné par l'IT, la technologie en général, et plus spécifiquement par le génie logiciel. Ce site reflète cet enthousiasme et a pour but d'aider les nouveaux venus à naviguer et à exceller dans le monde dynamique de l'informatique.</p>
-                        <div class="flex justify-center md:justify-start space-x-4">
+                        <h3 class="text-2xl font-bold mb-2 revealing-element-from-top">À propos de moi</h3>
+                        <p class="mb-4 revealing-element-from-background">En tant qu'étudiant en génie logiciel, je suis profondément passionné par l'IT, la technologie en général, et plus spécifiquement par le génie logiciel. Ce site reflète cet enthousiasme et a pour but d'aider les nouveaux venus à naviguer et à exceller dans le monde dynamique de l'informatique.</p>
+                        <div class="flex justify-center md:justify-start space-x-4 revealing-element-from-right">
                             <a href="https://github.com/FulbertDev-AI" class="bg-white text-primary p-2 rounded-full hover:bg-secondary transition" target="_blank">
                                 <i class="fab fa-github text-xl"></i>
                             </a>
@@ -871,15 +875,15 @@
     </section>
 
     <!-- Contact Form -->
-    <section id="contact" class="py-12 sm:py-20 bg-secondary">
+    <section id="contact" class="py-12 sm:py-20 bg-secondary revealing-element-from-background">
         <div class="container mx-auto px-4 sm:px-6">
-            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-accent mb-8 sm:mb-12 animate-slide-up">Contact</h2>
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-accent mb-8 sm:mb-12 animate-slide-up revealing-element-from-top">Contact</h2>
             
             <div class="max-w-2xl mx-auto bg-white rounded-lg sm:rounded-xl shadow-md sm:shadow-lg overflow-hidden animate-slide-up opacity-0" style="animation-delay: 0.2s;">
                 <div class="flex flex-col md:flex-row">
                     <div class="hidden md:block md:w-2/5 bg-primary p-8 text-white">
-                        <h3 class="text-xl font-bold mb-4">Informations de contact</h3>
-                        <div class="space-y-4">
+                        <h3 class="text-xl font-bold mb-4 revealing-element-from-left">Informations de contact</h3>
+                        <div class="space-y-4 revealing-element-from-background">
                             <div class="flex items-start">
                                 <i class="fas fa-map-marker-alt mt-1 mr-3"></i>
                                 <p>Lomé, Togo</p>
@@ -894,8 +898,8 @@
                             </div>
                         </div>
                         <div class="mt-8">
-                            <h3 class="text-xl font-bold mb-4">Me suivre</h3>
-                            <div class="flex space-x-4">
+                            <h3 class="text-xl font-bold mb-4 revealing-element-from-left">Me suivre</h3>
+                            <div class="flex space-x-4 revealing-element-from-background">
                                 <a href="https://www.linkedin.com/in/ditorga-nanga-7817a331a/" class="text-white p-2 hover:text-accent transition"  target="_blank">
                                     <i class="fab fa-linkedin-in text-xl"></i>
                                 </a>
@@ -911,17 +915,17 @@
                             </div>
                         </div>
                     </div>
-                    <div class="md:w-3/5 p-8">
+                    <div class="md:w-3/5 p-8 revealing-element-from-right">
                         <form>
-                            <div class="mb-6">
+                            <div class="mb-6 revealing-element-from-right">
                                 <label for="name" class="block text-gray-700 font-medium mb-2">Nom complet</label>
                                 <input type="text" id="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
                             </div>
-                            <div class="mb-6">
+                            <div class="mb-6 revealing-element-from-background">
                                 <label for="email" class="block text-gray-700 font-medium mb-2">Adresse email</label>
                                 <input type="email" id="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
                             </div>
-                            <div class="mb-6">
+                            <div class="mb-6 revealing-element-from-right">
                                 <label for="subject" class="block text-gray-700 font-medium mb-2">Sujet</label>
                                 <select id="subject" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
                                     <option value="">Sélectionnez un sujet</option>
@@ -931,11 +935,11 @@
                                     <option value="other">Autre</option>
                                 </select>
                             </div>
-                            <div class="mb-6">
+                            <div class="mb-6 revealing-element-from-background">
                                 <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
                                 <textarea id="message" rows="4" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
                             </div>
-                            <button type="submit" action="https://formsubmit.co/contact.fulbert@gmail.com" method="post" class="w-full bg-primary text-white font-bold py-3 px-4 rounded-lg hover:bg-accent transition duration-300">
+                            <button type="submit" action="https://formsubmit.co/contact.fulbert@gmail.com" method="post" class="w-full bg-primary text-white font-bold py-3 px-4 rounded-lg hover:bg-accent transition duration-300 revealing-element-from-bottom">
                                 Envoyer le message
                             </button>
                         </form>
@@ -946,16 +950,16 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white py-8 sm:py-12">
+    <footer class="bg-dark text-white py-8 sm:py-12 revealing-element-from-background">
         <div class="container mx-auto px-4 sm:px-6">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
                 <div>
-                    <h3 class="text-xl font-bold mb-4">IT Orientation</h3>
-                    <p class="text-gray-400">Votre guide pour réussir dans le domaine de l'informatique.</p>
+                    <h3 class="text-xl font-bold mb-4 revealing-element-from-top">IT Orientation</h3>
+                    <p class="text-gray-400 revealing-element-from-left">Votre guide pour réussir dans le domaine de l'informatique.</p>
                 </div>
                 <div>
-                    <h4 class="font-bold mb-4">Liens rapides</h4>
-                    <ul class="space-y-2">
+                    <h4 class="font-bold mb-4 revealing-element-from-top">Liens rapides</h4>
+                    <ul class="space-y-2 revealing-element-from-bottom">
                         <li><a href="#home" class="text-gray-400 hover:text-white transition">Accueil</a></li>
                         <li><a href="#filieres" class="text-gray-400 hover:text-white transition">Filières</a></li>
                         <li><a href="#debouches" class="text-gray-400 hover:text-white transition">Débouchés</a></li>
@@ -963,8 +967,8 @@
                     </ul>
                 </div>
                 <div>
-                    <h4 class="font-bold mb-4">Ressources</h4>
-                    <ul class="space-y-2">
+                    <h4 class="font-bold mb-4 revealing-element-from-top">Ressources</h4>
+                    <ul class="space-y-2 revealing-element-from-bottom">
                         <li><a href="https://dnanga.vercel.app/" class="text-gray-400 hover:text-white transition" target="_blank">Blog</a></li>
                         <!-- <li><a href="#" class="text-gray-400 hover:text-white transition">Tutoriels</a></li>
                         <li><a href="#" class="text-gray-400 hover:text-white transition">FAQ</a></li>
@@ -972,8 +976,8 @@
                     </ul>
                 </div>
                 <div>
-                    <h4 class="font-bold mb-4">Newsletter</h4>
-                    <p class="text-gray-400 mb-4">Abonnez-vous pour recevoir nos conseils et actualités.</p>
+                    <h4 class="font-bold mb-4 revealing-element-from-top">Newsletter</h4>
+                    <p class="text-gray-400 mb-4 revealing-element-from-right">Abonnez-vous pour recevoir nos conseils et actualités.</p>
                     <div class="flex">
                         <input type="email" placeholder="Votre email" class="px-4 py-2 w-full rounded-l-lg focus:outline-none text-gray-800">
                         <button class="bg-primary px-4 rounded-r-lg hover:bg-blue-600 transition">
@@ -982,7 +986,7 @@
                     </div>
                 </div>
             </div>
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 revealing-element-from-top">
                 <p>&copy; <a href="https://dnanga.vercel.app/" class="text-primary hover:underline" target="_blank">Fulbert D. NANGA</a>. Tous droits réservés.</p>
             </div>
         </div>
@@ -1055,11 +1059,57 @@
             
             // Mobile menu toggle (would need implementation)
             const mobileMenuButton = document.querySelector('.md\\:hidden');
-            mobileMenuButton.addEventListener('click', () => {
-                // Implement mobile menu toggle functionality
-                alert('Mobile menu would open here in a full implementation');
-            });
+            // mobileMenuButton.addEventListener('click', () => {
+            //     // Implement mobile menu toggle functionality
+            //     alert('Mobile menu would open here in a full implementation');
+            // });
         });
     </script>
+
+    <!-- POUR LES ANIMATIONS ET TRANSITIONS  -->
+
+<script>
+    // Initialisation de ScrollReveal
+    const sr = ScrollReveal();
+
+    // Révéler un élément avec une animation qui vient du bas
+    sr.reveal('.revealing-element-from-bottom', {
+        distance: '50px', // L'élément se déplace de 50 pixels
+        origin: 'bottom', // Il vient du bas
+        duration: 1000,   // L'animation dure 1000 millisecondes (1 seconde)
+        easing: 'ease-in-out' // Le type de transition (ralentissement au début et à la fin)
+    });
+
+    // Révéler un élément qui vient de la gauche
+    sr.reveal('.revealing-element-from-left', {
+        distance: '100px',
+        origin: 'left', // Vient de la gauche
+        duration: 800,
+        delay: 200,   // Délai de 200ms avant le début de l'animation
+        easing: 'cubic-bezier(0.6, 0.2, 0.1, 1)' // Une courbe de transition plus avancée
+    });
+
+    // Révéler un élément qui vient de la droite
+    sr.reveal('.revealing-element-from-right', {
+        distance: '100px',
+        origin: 'right', // Vient de la droite
+        duration: 800
+    });
+
+        // Révéler l'élément qui vient de l'arrière-plan 
+    sr.reveal('.revealing-element-from-background', {
+        scale: 0.8,
+        opacity: 0,
+        duration: 1000,
+        easing: 'ease-in-out'
+    });
+
+    // Révéler un élément qui vient du haut
+sr.reveal('.revealing-element-from-top', {
+    distance: '100px',
+    origin: 'top', // Vient du haut
+    duration: 800
+});
+</script>
 </body>
 </html>
